@@ -4,490 +4,351 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Siempre tú y yo 💗</title>
+<title>Para mi princesa 💗</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#080914;
-    color:#fff;
-    font-family:'Poppins',sans-serif;
-    overflow-x:hidden;
+body {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,120,190,.08), transparent 25%),
+        radial-gradient(circle at 80% 60%, rgba(255,80,160,.06), transparent 25%),
+        #080916;
+    color: #f8edf7;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 /* ESTRELLAS */
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-2;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .35;
     background-image:
-        radial-gradient(circle,rgba(255,255,255,.75) 1px,transparent 1px),
-        radial-gradient(circle,rgba(255,155,205,.55) 1px,transparent 1px);
-    background-size:90px 90px,150px 150px;
-    background-position:10px 20px,40px 70px;
-    opacity:.45;
+        radial-gradient(circle, #fff 1px, transparent 1px),
+        radial-gradient(circle, #ff8ac8 1px, transparent 1px);
+    background-size: 140px 140px, 190px 190px;
+    background-position: 10px 20px, 80px 100px;
+    z-index: -1;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    left:50%;
-    top:20%;
-    transform:translate(-50%,-50%);
-    background:radial-gradient(circle,rgba(255,120,180,.12),transparent 70%);
-    z-index:-1;
-    pointer-events:none;
+/* BARRA SUPERIOR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 22px 25px;
+    border-bottom: 1px solid rgba(255,150,210,.25);
+    background: rgba(8,9,22,.88);
+    backdrop-filter: blur(12px);
 }
 
-/* NAVEGACIÓN */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 7%;
-    background:rgba(7,8,18,.78);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(255,160,205,.14);
-    z-index:100;
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #ff8dca;
 }
 
-.logo{
-    font-family:'Caveat',cursive;
-    color:#ff9dcc;
-    font-size:28px;
+/* PORTADA */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 25px;
 }
 
-.nav-links{
-    display:flex;
-    gap:25px;
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff8dcc;
+    font-size: clamp(55px, 13vw, 100px);
+    line-height: 1;
+    margin-bottom: 25px;
 }
 
-.nav-links a{
-    color:#eee;
-    text-decoration:none;
-    font-size:13px;
-    transition:.3s;
+.hero p {
+    color: #d7c5d6;
+    font-size: 17px;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 40px;
 }
 
-.nav-links a:hover{
-    color:#ff9dcc;
+.start-btn {
+    border: none;
+    padding: 18px 55px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff83c4, #ff69b4);
+    color: #170816;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 35px rgba(255,100,180,.35);
+    transition: .3s;
 }
 
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    padding:120px 8% 80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    background:
-        radial-gradient(circle at center,rgba(255,100,175,.13),transparent 38%),
-        linear-gradient(180deg,#090c21,#080914);
-}
-
-.moon{
-    position:absolute;
-    top:120px;
-    left:8%;
-    width:85px;
-    height:85px;
-    border-radius:50%;
-    background:#f3f0e8;
-    box-shadow:0 0 35px rgba(255,255,255,.28);
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.eyebrow{
-    color:#ff9dcc;
-    font-size:15px;
-    margin-bottom:15px;
-}
-
-.hero h1{
-    font-family:'Caveat',cursive;
-    font-size:clamp(60px,10vw,105px);
-    line-height:.88;
-    margin-bottom:30px;
-}
-
-.hero p{
-    max-width:650px;
-    margin:auto;
-    color:#d8cbd2;
-    line-height:1.9;
-    font-size:15px;
-}
-
-.characters{
-    margin-top:32px;
-    font-size:52px;
-    letter-spacing:15px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:14px 30px;
-    background:#ff94c3;
-    color:#250c19;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-    box-shadow:0 10px 30px rgba(255,100,175,.2);
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 40px rgba(255,100,175,.35);
-}
-
-/* TARJETA FLOTANTE */
-
-.love-note{
-    position:absolute;
-    right:7%;
-    bottom:15%;
-    width:220px;
-    padding:23px;
-    background:#ffc0d5;
-    color:#391526;
-    font-family:'Caveat',cursive;
-    font-size:22px;
-    transform:rotate(4deg);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-/* ESTADÍSTICAS */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid rgba(255,255,255,.09);
-    border-bottom:1px solid rgba(255,255,255,.09);
-    background:rgba(255,255,255,.015);
-}
-
-.stat{
-    text-align:center;
-    padding:30px 15px;
-    border-right:1px solid rgba(255,255,255,.08);
-}
-
-.stat:last-child{
-    border-right:none;
-}
-
-.stat-icon{
-    font-size:27px;
-    margin-bottom:7px;
-}
-
-.stat strong{
-    display:block;
-    font-size:15px;
-}
-
-.stat span{
-    display:block;
-    margin-top:5px;
-    color:#a99da5;
-    font-size:12px;
+.start-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 50px rgba(255,100,180,.55);
 }
 
 /* SECCIONES */
 
-section{
-    padding:105px 8%;
+section {
+    padding: 90px 20px;
+    max-width: 1050px;
+    margin: auto;
 }
 
-.section-title{
-    text-align:center;
-    font-family:'Caveat',cursive;
-    font-size:58px;
-    color:#fff;
+.section-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(45px, 10vw, 75px);
+    color: white;
+    margin-bottom: 15px;
 }
 
-.section-subtitle{
-    text-align:center;
-    color:#a99da6;
-    margin-top:5px;
-    margin-bottom:65px;
+.section-subtitle {
+    text-align: center;
+    color: #c7b4c5;
+    margin-bottom: 55px;
+    font-size: 17px;
+}
+
+/* TARJETAS INICIALES */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.intro-card {
+    min-height: 220px;
+    padding: 40px 25px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-icon {
+    font-size: 50px;
+    margin-bottom: 18px;
+}
+
+.intro-card h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.intro-card p {
+    color: #bfaebe;
 }
 
 /* HISTORIA */
 
-.timeline{
-    max-width:950px;
-    margin:auto;
-    position:relative;
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding-left: 25px;
+    border-left: 2px solid #bd5f9b;
 }
 
-.timeline::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:0;
-    bottom:0;
-    width:2px;
-    background:linear-gradient(#ff8fbd,rgba(255,143,189,.08));
-    transform:translateX(-50%);
+.story-card {
+    background: rgba(28,27,37,.88);
+    border: 1px solid rgba(255,150,210,.18);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 35px 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
 
-.event{
-    width:50%;
-    padding:18px 42px;
+.story-card h3 {
+    color: #ff8fc9;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
-.event:nth-child(even){
-    margin-left:50%;
+.story-card p {
+    color: #d7cbd6;
+    line-height: 1.9;
+    font-size: 15px;
 }
 
-.event-card{
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,155,205,.18);
-    border-radius:20px;
-    padding:27px;
-    backdrop-filter:blur(8px);
-    box-shadow:0 15px 40px rgba(0,0,0,.16);
+/* FOTOS */
+
+.photo-section {
+    text-align: center;
 }
 
-.event-card h3{
-    color:#ff9dcc;
-    font-family:'Caveat',cursive;
-    font-size:29px;
-    margin-bottom:12px;
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 }
 
-.event-card p{
-    color:#cfc3ca;
-    font-size:14px;
-    line-height:1.9;
+.photo-card {
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgba(255,150,210,.2);
+    background: #151522;
+    box-shadow: 0 15px 35px rgba(0,0,0,.3);
+    transition: .3s;
 }
 
-/* GALERÍA */
-
-.gallery{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+.photo-card:hover {
+    transform: translateY(-7px);
 }
 
-.photo-card{
-    position:relative;
-    border-radius:22px;
-    overflow:hidden;
-    background:#111323;
-    border:1px solid rgba(255,155,205,.2);
-    box-shadow:0 18px 40px rgba(0,0,0,.25);
-    transition:.4s;
+.photo-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
 }
 
-.photo-card:hover{
-    transform:translateY(-8px);
-    border-color:#ff9dcc;
+.photo-card:first-child img {
+    object-position: center;
 }
 
-.photo-card img{
-    width:100%;
-    height:360px;
-    display:block;
-    object-fit:cover;
+/* SIEMPRE TU Y YO */
+
+.forever {
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255,80,170,.05),
+        transparent
+    );
 }
 
-.photo-label{
-    padding:16px;
-    text-align:center;
-    background:rgba(10,11,23,.92);
-    color:#ffb0d0;
-    font-family:'Caveat',cursive;
-    font-size:25px;
+.forever-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 2;
+    color: #d8c7d7;
 }
 
-/* CENTRO */
-
-.photo-card.center{
-    transform:translateY(-18px);
-}
-
-.photo-card.center:hover{
-    transform:translateY(-26px);
+.forever-heart {
+    font-size: 65px;
+    margin: 25px 0;
 }
 
 /* FINAL */
 
-.final{
-    min-height:85vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-        radial-gradient(circle at center,rgba(255,100,175,.16),transparent 45%),
-        linear-gradient(180deg,#080914,#170b18);
+.final {
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.final-content{
-    max-width:800px;
+.final h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff91cb;
+    font-size: clamp(50px, 11vw, 90px);
+    margin-bottom: 30px;
 }
 
-.final h2{
-    font-family:'Caveat',cursive;
-    font-size:clamp(50px,8vw,80px);
-    color:#ff9dcc;
-    margin-bottom:30px;
+.final p {
+    max-width: 760px;
+    margin: auto;
+    color: #d8c9d8;
+    font-size: 18px;
+    line-height: 2;
 }
 
-.final p{
-    color:#d5c8cf;
-    line-height:2;
-    font-size:15px;
+.signature {
+    margin-top: 45px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: white;
 }
 
-.signature{
-    margin-top:35px;
-    font-family:'Caveat',cursive;
-    font-size:34px;
+.last-emojis {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    font-size: 70px;
 }
 
-/* FOOTER */
+/* REPRODUCTOR */
 
-footer{
-    padding:25px;
-    text-align:center;
-    color:#81757e;
-    font-size:12px;
-    border-top:1px solid rgba(255,255,255,.08);
+.music-control {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 200;
+    border: 1px solid rgba(255,150,210,.35);
+    background: rgba(20,18,30,.92);
+    color: #ff91cb;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    display: none;
 }
 
-/* CELULAR */
+/* RESPONSIVE */
 
-@media(max-width:800px){
+@media (max-width: 700px) {
 
-    nav{
-        height:60px;
-        padding:0 6%;
+    .hero {
+        min-height: 80vh;
     }
 
-    .nav-links{
-        display:none;
+    .intro-grid {
+        grid-template-columns: 1fr;
     }
 
-    .logo{
-        font-size:25px;
+    .intro-card {
+        min-height: 190px;
     }
 
-    .hero{
-        min-height:100vh;
-        padding:110px 7% 70px;
+    .photos {
+        grid-template-columns: 1fr;
     }
 
-    .moon{
-        width:55px;
-        height:55px;
-        top:95px;
-        left:8%;
+    .photo-card img {
+        height: 420px;
     }
 
-    .love-note{
-        display:none;
+    .timeline {
+        padding-left: 15px;
     }
 
-    .characters{
-        font-size:43px;
-        letter-spacing:8px;
+    .story-card {
+        padding: 23px;
     }
 
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stat:nth-child(2){
-        border-right:none;
-    }
-
-    .stat:nth-child(1),
-    .stat:nth-child(2){
-        border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    section{
-        padding:80px 6%;
-    }
-
-    .section-title{
-        font-size:48px;
-    }
-
-    .section-subtitle{
-        margin-bottom:45px;
-    }
-
-    .timeline::before{
-        left:8px;
-    }
-
-    .event,
-    .event:nth-child(even){
-        width:100%;
-        margin-left:0;
-        padding:15px 0 15px 30px;
-    }
-
-    .event-card{
-        padding:22px;
-    }
-
-    .gallery{
-        grid-template-columns:1fr;
-        gap:22px;
-    }
-
-    .photo-card.center{
-        transform:none;
-    }
-
-    .photo-card.center:hover{
-        transform:translateY(-8px);
-    }
-
-    .photo-card img{
-        height:auto;
-        max-height:500px;
-    }
-
-    .final{
-        min-height:75vh;
-        padding:80px 8%;
+    .last-emojis {
+        gap: 60px;
+        font-size: 55px;
     }
 }
 </style>
@@ -495,273 +356,228 @@ footer{
 
 <body>
 
-<nav>
-    <div class="logo">Siempre tú y yo 💗</div>
-
-    <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#historia">Nuestra historia</a>
-        <a href="#recuerdos">Siempre tú y yo</a>
-        <a href="#final">Para ti</a>
-    </div>
-</nav>
-
+<header>
+    <div class="logo">Para mi princesa 💗</div>
+</header>
 
 <!-- PORTADA -->
 
-<header class="hero" id="inicio">
+<div class="hero">
 
-    <div class="moon"></div>
+    <h1>Para mi princesa 💗</h1>
 
-    <div class="hero-content">
+    <p>
+        Un pequeño lugar creado para guardar nuestra historia,
+        nuestros recuerdos y todo lo que hemos vivido juntos.
+    </p>
 
-        <div class="eyebrow">
-            Un pequeño lugar hecho especialmente para ti 💗
-        </div>
-
-        <h1>
-            Para mi princesa
-        </h1>
-
-        <p>
-            Un lugar para guardar todo lo que hemos vivido juntos
-            durante este año, incluso cuando la distancia ha querido
-            ponerse en medio de nosotros.
-        </p>
-
-        <div class="characters">
-            🎀 🕷️
-        </div>
-
-        <a href="#historia" class="btn">
-            Comenzar 💗
-        </a>
-
-    </div>
-
-    <div class="love-note">
-        A pesar de la distancia,<br>
-        seguimos escribiendo<br>
-        nuestra historia. 💗
-    </div>
-
-</header>
-
-
-<!-- ESTADÍSTICAS -->
-
-<div class="stats">
-
-    <div class="stat">
-        <div class="stat-icon">💗</div>
-        <strong>28 de septiembre</strong>
-        <span>El comienzo de nuestro año</span>
-    </div>
-
-    <div class="stat">
-        <div class="stat-icon">💗</div>
-        <strong>Un año juntos</strong>
-        <span>365 días de nosotros</span>
-    </div>
-
-    <div class="stat">
-        <div class="stat-icon">💗</div>
-        <strong>Muchos recuerdos</strong>
-        <span>Que quiero conservar</span>
-    </div>
-
-    <div class="stat">
-        <div class="stat-icon">💗</div>
-        <strong>Tú y yo</strong>
-        <span>Siempre</span>
-    </div>
+    <button class="start-btn" onclick="comenzar()">
+        Comenzar 💗
+    </button>
 
 </div>
 
+<!-- INTRODUCCIÓN -->
+
+<section>
+
+    <div class="intro-grid">
+
+        <div class="intro-card">
+            <div class="intro-icon">📅</div>
+            <h3>Un año juntos</h3>
+            <p>28 de septiembre 💗</p>
+        </div>
+
+        <div class="intro-card">
+            <div class="intro-icon">💗</div>
+            <h3>La distancia</h3>
+            <p>No pudo separarnos</p>
+        </div>
+
+        <div class="intro-card">
+            <div class="intro-icon">💗</div>
+            <h3>Recuerdos</h3>
+            <p>Inolvidables</p>
+        </div>
+
+        <div class="intro-card">
+            <div class="intro-icon">💗</div>
+            <h3>Tú y yo</h3>
+            <p>Siempre</p>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- NUESTRA HISTORIA -->
 
-<section id="historia">
+<section>
 
-    <h2 class="section-title">
-        Nuestra historia 💗
-    </h2>
+    <h2 class="section-title">Nuestra historia 💗</h2>
 
     <p class="section-subtitle">
-        Cuatro momentos de una historia que todavía estamos escribiendo.
+        Cada momento importa.
     </p>
-
-
-    <!-- 1 -->
 
     <div class="timeline">
 
-        <div class="event">
+        <div class="story-card">
 
-            <div class="event-card">
+            <h3>💗 El comienzo</h3>
 
-                <h3>✨ El comienzo</h3>
+            <p>
+                Empezamos conociéndonos en Roblox. Yo estaba en una supuesta boda,
+                y tu curiosidad en el chat te llevó a mí.
+                Ese fue nuestro inicio.
+                Empezamos a seguir hablando, a conocernos y después,
+                con el paso del tiempo, nos hicimos amigos y mejores amigos.
+                Sentíamos que cada vez nos conocíamos más y que nuestra amistad
+                era irrompible.
+                <br><br>
 
-                <p>
-                    Empezamos conociéndonos en Roblox. Yo estaba en una
-                    supuesta boda, y tu curiosidad en el chat te llevó a mí.
-                    Nuestro inicio empezó con seguir hablando y conocernos.
-                    Después, con el paso del tiempo, nos hicimos amigos y
-                    mejores amigos. Sentíamos que cada vez nos conocíamos
-                    más y que nuestra amistad era irrompible.
-                    <br><br>
+                Después de mucho tiempo llegué a la etapa del sufrimiento.
+                Solo encontraba oscuridad a donde yo veía.
+                Tú estabas ahí, preocupada por mí.
+                Me ayudaste, me sacaste de eso y, en esos momentos en los que
+                me ayudaste, me enamoré.
+                <br><br>
 
-                    Después de mucho, llegué a una etapa de sufrimiento.
-                    Solo encontraba oscuridad a donde yo veía. Tú estabas
-                    ahí, preocupada por mí. Me ayudaste, me sacaste de eso,
-                    y en esos momentos en los que me ayudaste, me enamoré.
-                    Verte hacer tanto por mí, dar tu parte para ayudarme,
-                    fue mucho para mí, hasta el punto de no verte como mi
-                    mejor amiga, sino como algo más.
-                    <br><br>
+                Verte hacer tanto por mí, dar tu parte para ayudarme,
+                significó muchísimo.
+                Hasta el punto de dejar de verte solamente como mi mejor amiga
+                y empezar a verte como algo más.
+                <br><br>
 
-                    Intenté hacer intentos para enamorarte y confesarte lo
-                    que sentía. Tú dudabas, pero llegó el día en el que te
-                    enamoraste. Ambos teníamos miedo, miedo de que esto
-                    doliera por la distancia, y decidimos esperarnos pero
-                    sin ser nada aún.
-                    <br><br>
+                Intenté hacer cosas para enamorarte y confesarte lo que sentía.
+                Tú dudabas, pero llegó el día en el que te enamoraste.
+                Sin embargo, ambos teníamos miedo.
+                Miedo de que esto doliera por la distancia.
+                <br><br>
 
-                    Los días pasaban y nuestro amor creció. Nuestro corazón
-                    ya quería decir "te amo" y no solo un "te quiero".
-                    Y llegó el día, esa llamada, esa simple llamada que
-                    cambió todo:
-                    <br><br>
+                Decidimos esperarnos, pero sin ser nada todavía.
+                Los días pasaban y nuestro amor crecía.
+                Nuestro corazón ya quería decir "te amo" y no solamente
+                un "te quiero".
+                <br><br>
 
-                    <strong>
-                        “Nayeli, ¿quieres ser mi novia?”
-                    </strong>
-                    <br><br>
+                Y llegó el día.
+                Esa llamada.
+                Esa simple llamada que cambió todo.
+                <br><br>
 
-                    Y cuando dijiste:
-                    <strong>“Sí, quiero.”</strong>
-                    <br><br>
+                <strong>
+                    "Nayeli, ¿quieres ser mi novia?"
+                </strong>
+                <br><br>
 
-                    Este niño por fin fue feliz. Este niño volvió a salir
-                    y volvió a soñar, pero solo contigo.
-                    <br><br>
+                Y cuando dijiste:
+                <strong>"Sí, quiero"</strong>,
+                este niño por fin fue feliz.
+                Este niño volvió a salir y volvió a soñar,
+                pero esta vez solo contigo.
+                <br><br>
 
-                    Los días pasaban y nuestro amor seguía. Ya no estábamos
-                    solos, sabíamos que teníamos a alguien, y eso nos llevó
-                    hasta aquí:
-                    <br><br>
+                Los días pasaban y nuestro amor seguía creciendo.
+                Ya no estábamos solos.
+                Sabíamos que teníamos a alguien,
+                y eso nos llevó hasta aquí:
+                <br><br>
 
-                    <strong>
-                        Al primer año de muchos. 💗
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2 -->
-
-        <div class="event">
-
-            <div class="event-card">
-
-                <h3>💌 Nuestro primer momento especial</h3>
-
-                <p>
-                    Me acuerdo de la primera vez que jugamos siendo novios.
-                    Si no estoy mal, era un parkour jsjs.
-                    <br><br>
-
-                    En ese momento se sentía bonito poder decirme:
-                    “Al fin podré ponerle en el chat: vamos amor”
-                    o simplemente un “te amo”.
-                    <br><br>
-
-                    En ese mismo obby, tú estabas en un carrito como de
-                    mina y yo te llevaba. Eran momentos en los que nos
-                    reíamos porque te me ibas a lo lejos y terminábamos
-                    cayéndonos jsjs.
-                    <br><br>
-
-                    Pero esa fue la primera etapa de nuestra relación,
-                    y aunque pareciera un simple juego, para mí significaba
-                    mucho. 💗
-                </p>
-
-            </div>
+                <strong>Al primer año de muchos. 💗</strong>
+            </p>
 
         </div>
 
 
-        <!-- 3 -->
+        <div class="story-card">
 
-        <div class="event">
+            <h3>💗 Nuestra primera etapa</h3>
 
-            <div class="event-card">
+            <p>
+                Me acuerdo de la primera vez que jugamos siendo novios.
+                Si no estoy mal, era un parkour en Roblox.
+                <br><br>
 
-                <h3>🎬 Un recuerdo para siempre</h3>
+                En ese momento se sentía tan bonito poder decirme:
+                "Al fin podré ponerle en el chat 'vamos amor'
+                o un 'te amo'".
+                <br><br>
 
-                <p>
-                    Un recuerdo que se podría quedar para siempre sería
-                    el momento en que tú me querías dejar porque los
-                    problemas se acumulaban y la presión de la distancia
-                    te dolía.
-                    <br><br>
+                Y en ese mismo obby, que era uno en el que tú estabas
+                en un carrito como de mina y yo te llevaba,
+                vivimos nuestros primeros momentos como pareja.
+                <br><br>
 
-                    Eran momentos en los que te sentías más que sola,
-                    pero yo estaba ahí, dándote soluciones y haciéndote
-                    entender que, aunque todo estuviera difícil,
-                    nosotros podíamos seguir luchando por este amor.
-                    <br><br>
+                Nos reíamos porque te me ibas a lo lejos,
+                nos caíamos y terminábamos haciendo cualquier cosa. 😂
+                <br><br>
 
-                    De todo lo que te dije, me diste a entender que te
-                    sentiste más que amada y con ganas de seguir y no
-                    dejarme.
-                    <br><br>
-
-                    Es uno de esos momentos en los cuales entenderás que
-                    yo siempre me quedaré en las buenas y en las malas. 💗
-                </p>
-
-            </div>
+                Pero esa fue la primera etapa de nuestra relación.
+                El comienzo de nosotros siendo oficialmente
+                <strong>tú y yo. 💗</strong>
+            </p>
 
         </div>
 
 
-        <!-- 4 -->
+        <div class="story-card">
 
-        <div class="event">
+            <h3>💗 Un recuerdo que podría quedarse para siempre</h3>
 
-            <div class="event-card">
+            <p>
+                Un recuerdo que se podría quedar para siempre sería el momento
+                en el que tú me querías dejar porque los problemas se acumulaban
+                y la presión de la distancia te dolía.
+                <br><br>
 
-                <h3>💗 Y seguimos aquí</h3>
+                Esos momentos en los que te sentías más que sola.
+                Pero yo estaba ahí, dándote soluciones y haciéndote entender
+                que aunque todo estuviera difícil,
+                nosotros podíamos seguir luchando por este amor.
+                <br><br>
 
-                <p>
-                    Y a pesar de todo, esa llama de nuestros corazones es
-                    la que sigue avivando este amor.
-                    <br><br>
+                De todo lo que te dije, me diste a entender que te sentiste
+                más que amada y con ganas de seguir y no dejarme.
+                <br><br>
 
-                    Pueden pasar millones de problemas, pero ya sabemos
-                    afrontarlos juntos como pareja. Ya sabemos cómo hacer
-                    todo esto posible y que nuestro amor siga creciendo
-                    con el paso del tiempo.
-                    <br><br>
+                Es uno de esos momentos en los que entenderás que
+                <strong>yo siempre me quedaré en las buenas y en las malas. 💗</strong>
+            </p>
 
-                    Esto ya no es un pasatiempo, esto va para toda una
-                    eternidad.
-                    <br><br>
+        </div>
 
-                    Siempre serás mi princesa y yo seré tu caballero que
-                    dará todo en nombre del amor.
-                    <br><br>
 
-                    Serás mi futura esposa y yo seré tu futuro esposo,
-                    hasta la eternidad. 💗
-                </p>
+        <div class="story-card">
 
-            </div>
+            <h3>💗 Y seguimos aquí</h3>
+
+            <p>
+                Y a pesar de todo, esa llama de nuestros corazones
+                es la que sigue avivando este amor.
+                <br><br>
+
+                Pueden pasar millones de problemas,
+                pero ya sabemos afrontarlos juntos como pareja.
+                Ya sabemos cómo hacer todo esto posible
+                y cómo hacer que nuestro amor siga creciendo
+                con el paso del tiempo.
+                <br><br>
+
+                Esto ya no es un pasatiempo.
+                Esto va para toda una eternidad.
+                <br><br>
+
+                Siempre serás mi princesa
+                y yo seré tu caballero,
+                que dará todo en nombre del amor.
+                <br><br>
+
+                Serás mi futura esposa
+                y yo seré tu futuro esposo,
+                hasta la eternidad. 💗
+            </p>
 
         </div>
 
@@ -769,113 +585,145 @@ footer{
 
 </section>
 
+<!-- FOTOS -->
 
-<!-- SIEMPRE TÚ Y YO -->
+<section class="photo-section">
 
-<section id="recuerdos">
-
-    <h2 class="section-title">
-        Siempre tú y yo 💗
-    </h2>
+    <h2 class="section-title">Siempre tú y yo 💗</h2>
 
     <p class="section-subtitle">
-        Tres pequeños pedacitos de nuestra historia.
+        Tres imágenes, millones de sentimientos.
     </p>
 
-    <div class="gallery">
-
-        <!-- SEBAS -->
+    <div class="photos">
 
         <div class="photo-card">
-
-            <img
-                src="IMG_20260905_155203_809.jpg"
-                alt="Sebas"
-            >
-
-            <div class="photo-label">
-                Sebas 💗
-            </div>
-
+            <img src="IMG_20260905_155203_809.jpg"
+                 alt="Sebas">
         </div>
-
-
-        <!-- HELLO KITTY + SPIDERMAN -->
-
-        <div class="photo-card center">
-
-            <img
-                src="images.jpeg"
-                alt="Hello Kitty y Spider-Man"
-            >
-
-            <div class="photo-label">
-                Tú y yo 💗
-            </div>
-
-        </div>
-
-
-        <!-- NAYE -->
 
         <div class="photo-card">
+            <img src="images.jpeg"
+                 alt="Hello Kitty y Spider-Man">
+        </div>
 
-            <img
-                src="IMG-20260319-WA0073.jpg"
-                alt="Naye"
-            >
-
-            <div class="photo-label">
-                Naye 💗
-            </div>
-
+        <div class="photo-card">
+            <img src="IMG-20260319-WA0073.jpg"
+                 alt="Nayeli">
         </div>
 
     </div>
 
 </section>
 
+<!-- TEXTO FINAL -->
+
+<section class="forever">
+
+    <h2 class="section-title">
+        Gracias por este año 💗
+    </h2>
+
+    <p class="forever-text">
+
+        En este año pasamos momentos,
+        algunos malos, pero sobre todo nuestro amor siguió adelante,
+        enfrentando cada problema juntos.
+        <br><br>
+
+        Nos hemos reído, la hemos pasado bien
+        y, sobre todo, hemos mantenido esas ganas de seguir luchando
+        por el otro y seguir adelante.
+        <br><br>
+
+        Vamos por más años inolvidables.
+        Vamos por ese futuro tan anhelado y lleno de amor,
+        para seguir cumpliendo nuestros sueños y metas.
+    </p>
+
+    <div class="forever-heart">💗</div>
+
+</section>
 
 <!-- FINAL -->
 
-<section class="final" id="final">
+<section class="final">
 
-    <div class="final-content">
+    <h2>Para siempre, tú y yo 💗</h2>
 
-        <h2>
-            Un año siendo una pareja pegajosa 💗
-        </h2>
+    <p>
+        La distancia podrá separar nuestros lugares,
+        pero nunca ha conseguido separar nuestros corazones.
+        <br><br>
 
-        <p>
-            En este año pasamos momentos, algunos malos pero sobre todo
-            nuestro amor siguió adelante, enfrentando cada problema juntos.
-            Nos hemos reído, la hemos pasado bien y sobre todo, nuestras
-            ganas de seguir luchando por el otro y seguir adelante.
-            <br><br>
+        Gracias por cada llamada, cada mensaje,
+        cada risa, cada momento y cada noche
+        en la que estuvimos juntos aunque existieran kilómetros
+        entre nosotros.
+    </p>
 
-            Vamos por más años inolvidables, vamos por ese futuro tan
-            anhelado y lleno de amor, para seguir cumpliendo nuestros
-            sueños y metas.
-        </p>
+    <div class="signature">
+        Te amo, mi princesa. 💗
+        <br>
+        — Sebas
+    </div>
 
-        <div class="signature">
-            Te amo, mi princesa. 💗
-            <br>
-            — Sebas
-        </div>
-
-        <div class="characters">
-            🎀 🕷️
-        </div>
-
+    <div class="last-emojis">
+        <span>🎀</span>
+        <span>🕷️</span>
     </div>
 
 </section>
 
+<!-- MÚSICA -->
 
-<footer>
-    Este pequeño lugar fue creado solamente para ti, mi princesa. 💗
-</footer>
+<audio id="musica" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-control" onclick="toggleMusic()">
+    🎵 Pausar música
+</button>
+
+<script>
+
+const musica = document.getElementById("musica");
+const musicButton = document.getElementById("musicButton");
+
+function comenzar() {
+
+    musica.volume = 0.45;
+
+    musica.play().then(() => {
+        musicButton.style.display = "block";
+    }).catch(() => {
+        musicButton.style.display = "block";
+    });
+
+    window.scrollTo({
+        top: window.innerHeight * 0.85,
+        behavior: "smooth"
+    });
+}
+
+function toggleMusic() {
+
+    if (musica.paused) {
+
+        musica.play();
+
+        musicButton.innerHTML = "🎵 Pausar música";
+
+    } else {
+
+        musica.pause();
+
+        musicButton.innerHTML = "🎵 Reproducir música";
+
+    }
+}
+
+</script>
 
 </body>
 </html>
